@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<META content="text/html; charset=Shift_JIS" http-equiv="Content-Type">
+<SCRIPT language="JavaScript">
+//
+//
+var increment_number = 0
+var incrementFlag = "off"
+var decrement_number = 0
+var decrementFlag = "off"
+
+//
+function incrementFunc(start)	{
+	if(incrementFlag == "off")	{	//
+		incrementFlag = "on"		//
+		increment_number = start
+	}
+	if(incrementFlag == "on")	{
+		return increment_number++
+	}
+}
+
+//
+function incrementFuncStop()	{
+	incrementFlag = "off"
+}
+
+//
+function decrementFunc(start)	{
+	if(decrementFlag == "off")	{	//
+		decrementFlag = "on"		//
+		decrement_number = start
+	}
+	if(decrementFlag == "on")	{
+		return decrement_number--
+	}
+}
+
+//
+function decrementFuncStop()	{
+	decrementFlag = "off"
+}
+
+//グローバル変数の設定
+var num = null
+var ini_flag = "on"
+var flag = "on"
+
+//
+//
+//
+function loopNum(start,end)	{ //
+	if(start >= end)	{
+		num = "Error"
+	} else	{
+		if(ini_flag == "on")	{	//
+			incrementFuncStop()	//
+			decrementFuncStop()	//
+			ini_flag = "off"
+		}
+		if(flag == "on")	{
+			num = incrementFunc(start)
+			if(num == end - 1)	{
+				incrementFuncStop()
+				flag = "off"
+			}
+		} else	{
+			num = decrementFunc(end)
+			if(num == start + 1)	{
+				decrementFuncStop()
+				flag = "on"
+			}
+		}
+
+	}
+return num
+}
+
+//
+function loopNumStop()	{
+	ini_flag = "on"
+	flag = "on"
+}
+
+// 
+
+function glowStr()	{
+	div1.filters.glow.strength = loopNum(0,20)
+	setTimeout("glowStr()",100)
+}
+
+</SCRIPT>
+<META content="IBM WebSphere Studio Homepage Builder Version 7.0.0.0 for Windows" name="GENERATOR">
+<META http-equiv="Content-Style-Type" content="text/css">
+</HEAD>
+<BODY bgcolor="black" onload="glowStr();" text="white">
+<DIV style="width : 231px;height : 26px;top : 2px;left : 2px;
+  position : absolute;
+  z-index : 1;
+  visibility : visible;
+" id="Layer1">
+<CENTER>
+<DIV id="div1" style="COLOR: red; FILTER: glow(color='#00ffff',strength=0); FONT-FAMILY: Arial; FONT-SIZE: 80pt; WIDTH: 100%">
+<TABLE>
+  <TBODY>
+    <TR>
+      <TD height="12" width="200"><IMG src="tel.gif" width="214" height="16" border="0"></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</DIV>
+</CENTER>
+</DIV>
+</BODY>
+</HTML>

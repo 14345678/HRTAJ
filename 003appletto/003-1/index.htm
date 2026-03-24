@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META name="GENERATOR" content="IBM WebSphere Studio Homepage Builder Version 7.0.0.0 for Windows">
+<META http-equiv="Content-Style-Type" content="text/css">
+<TITLE></TITLE>
+</HEAD>
+<BODY background="01.jpg">
+<DIV style="width : 291px;height : 29px;top : 132px;left : 24px;
+  position : absolute;
+  z-index : 3;
+  visibility : visible;
+" id="Layer2"><IMG src="bird6.gif" width="313" height="62" border="0"></DIV>
+<DIV style="width : 866px;height : 21px;top : 3px;left : 2px;
+  position : absolute;
+  z-index : 2;
+  visibility : visible;
+" id="Layer1"><INPUT onclick=history.back() value=前へ戻る type=button>　<A href="../../index.htm"><IMG src="top.gif" width="85" height="18" border="0"></A>　<A href="../../mokuji.htm"><IMG src="008.gif" width="80" height="20" border="0"></A>　　　　　　　　　<FONT color="#ffffff" size="3"><B>ゆっくりとご覧下さいタイタニックが出てきます。</B></FONT></DIV>
+<DIV id="img2" style="left : 593px; width : 474px; POSITION: absolute; top : 39px; height : 219px;
+  z-index : 1;
+"><FONT size="1"><FONT size="1"><IMG id="reflect2" src="titanic.gif" border="0" width="473" height="229"><BR>
+<SCRIPT language="JavaScript1.2">
+			layWidth = 473;
+			layHeight = 229;
+function f1(){
+setInterval("mdiv.filters.wave.phase+=10",100);
+}
+
+if (document.all){
+
+document.write('<img id=mdiv src="'+document.all.reflect2.src+'" style="filter:wave(strength=3,freq=10,phase=0,lightstrength=20)  blur() flipv();; width:0px; HEIGHT: 5px"')
+}
+
+var step = 1;
+var delay = 100;
+var height = 0;
+var Hoffset = 0;
+var Woffset = 0;
+var yon = 1;
+var xon = 0;
+var pause = true;
+var interval;
+var name = navigator.appName;
+name = true;
+var xPos =1100;  //左スタート
+img2.style.top = 235-reflect2.style.pixelHeight
+function changePos() {
+width = document.body.clientWidth;
+height = document.body.clientHeight;
+Hoffset = img2.offsetHeight;
+Woffset = img2.offsetWidth;
+img2.style.left = xPos + document.body.scrollLeft;
+if (xPos>700-435*reflect2.style.pixelWidth/layWidth) {
+xPos = xPos - step;
+}
+   if(reflect2.style.pixelWidth<layWidth){
+        reflect2.style.pixelWidth +=1;
+        mdiv.style.pixelWidth +=1;
+}
+   if(reflect2.style.pixelHeight<layHeight*reflect2.style.pixelWidth/layWidth){
+        reflect2.style.pixelHeight +=1;
+}
+   if(mdiv.style.pixelHeight<layHeight*reflect2.style.pixelWidth/layWidth*.6){
+        mdiv.style.pixelHeight +=1;
+}
+
+
+
+//if (img2.style.top > 200-reflect2.style.pixelHeight) {
+img2.style.top = 200-reflect2.style.pixelHeight;  //上スタート
+//}
+}
+
+
+function start() {
+//if(name) img2.visibility = "visible";
+//else document.img2.visibility = "visible";
+interval = setInterval('changePos()',delay);
+}
+
+
+f1();
+start();
+//  End -->
+</SCRIPT></FONT></FONT></DIV>
+<P><BR>
+</P>
+</BODY>
+</HTML>
